@@ -1,0 +1,22 @@
+n = int(input())
+arr = list(map(int, input().split()))
+
+def find(arr, curr):
+    a = [curr]
+    a.append(arr[a[-1] - 1])
+    a.append(arr[a[-1] - 1])
+    a.append(arr[a[-1] - 1])
+    if a[0] == a[-1]:
+        a.pop(-1)
+        s = set(a)
+        if len(s) == 3:
+            return True
+    return False
+
+ans = "NO"
+
+for i in arr:
+    if find(arr, i):
+        ans = "YES"
+        break
+print(ans)
